@@ -11,9 +11,9 @@
         message: {
           email: $("[name=email]", className).val(),
           content: $("[name=content]", className).val(),
-          title: $("[name=title]", className).val()
-        },
-        domain: window.location.hostname
+          title: $("[name=title]", className).val(),
+          name: $("[name=name]", className).val()
+        }
       },
       success: function(response) {
         if (options.success) {

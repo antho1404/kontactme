@@ -8,7 +8,7 @@ submitForm = (className, key, options) ->
         email: $("[name=email]", className).val()
         content: $("[name=content]", className).val()
         title: $("[name=title]", className).val()
-      domain: window.location.hostname
+        name: $("[name=name]", className).val()
     success: (response) ->
       options.success(response) if options.success
     error: (error) ->
