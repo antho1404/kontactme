@@ -1,8 +1,7 @@
 submitForm = (className, key, options) ->
   className = ".#{className}"
   $.ajax
-    url: "http://kontactme.com/applications/#{key}/messages"
-    dataType: "json"
+    url: "http://kontactme.com/applications/#{key}/messages.json"
     type: "POST"
     data:
       message:
