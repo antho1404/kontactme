@@ -27,7 +27,7 @@
         });
         $(className)[0].reset();
         if (options.success) {
-          return options.success(response);
+          return options.success(response, $("form" + className));
         }
       },
       error: function(error) {
@@ -35,7 +35,7 @@
           disabled: false
         });
         if (options.error) {
-          return options.error(JSON.parse(error.responseText).errors);
+          return options.error(JSON.parse(error.responseText).errors, $("form" + className));
         }
       }
     });

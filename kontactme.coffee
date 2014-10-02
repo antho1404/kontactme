@@ -13,10 +13,10 @@ submitForm = (className, key, options={}) ->
     success: (response) ->
       $("#{className} input[type=submit]").attr disabled: false
       $(className)[0].reset()
-      options.success(response) if options.success
+      options.success(response, $("form#{className}")) if options.success
     error: (error) ->
       $("#{className} input[type=submit]").attr disabled: false
-      options.error(JSON.parse(error.responseText).errors) if options.error
+      options.error(JSON.parse(error.responseText).errors, $("form#{className}")) if options.error
   false
 
 $.fn.kontactme = (key, options) ->
